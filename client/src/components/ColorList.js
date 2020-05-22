@@ -54,7 +54,7 @@ const ColorList = ({ colors, updateColors }) => {
   const addNewColor = (event) => {
     event.preventDefault();
     axiosWithAuth()
-      .post(`/api/colors/`, colorToEdit)
+      .post(`/api/colors/`, colorToAdd)
       .then((response) => {
         console.log('Response from add new color post ColorList', response);
         updateColors(response.data);

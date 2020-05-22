@@ -58,7 +58,7 @@ const ColorList = ({ colors, updateColors }) => {
       .then((response) => {
         console.log('Response from add new color post ColorList', response);
         updateColors(response.data);
-        setEditing(false);
+        setAdd(false);
       })
       .catch((error) => console.log('Error from post adding new color', error));
   };

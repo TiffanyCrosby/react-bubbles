@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const Login = (props) => {
-  const [loginInput, setLoginInput] = useState({});
+  const [loginInput, setLoginInput] = useState({ username: '', password: '' });
 
   const handleChange = (event) => {
     setLoginInput({ ...loginInput, [event.target.name]: event.target.value });

@@ -28,7 +28,10 @@ const ColorList = ({ colors, updateColors }) => {
       .put(`/api/colors/${colorToEdit.id}`, colorToEdit)
       .then((response) => {
         console.log('Response from PUT request ColorList', response);
-        updateColors(response.data);
+        updateColors([
+          ...colors.filter((color) => color.id !== colorToEdit.id),
+          response.data,
+        ]);
         setEditing(false);
       })
       .catch((error) => console.log('Error from ColorList', error));
